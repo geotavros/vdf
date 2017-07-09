@@ -9,8 +9,8 @@ import (
 	"unicode"
 )
 
-var escapeString = strings.NewReplacer("\\", "\\\\", "\n", "\\n", "\t", "\\t", "\v", "\\v", "\b", "\\b", "\r", "\\r", "\f", "\\f", "\a", "\\a", "'", "\\'", "\"", "\\\"")
-var unescapeString = strings.NewReplacer("\\\\", "\\", "\\n", "\n", "\\t", "\t", "\\v", "\v", "\\b", "\b", "\\r", "\r", "\\f", "\f", "\\a", "\a", "\\'", "'", "\\\"", "\"")
+var escapeString = strings.NewReplacer("\\", "\\\\", "\n", "\\n", "\t", "\\t", "\v", "\\v", "\b", "\\b", "\r", "\\r", "\f", "\\f", "\a", "\\a", "\"", "\\\"")
+var unescapeString = strings.NewReplacer("\\\\", "\\", "\\n", "\n", "\\t", "\t", "\\v", "\v", "\\b", "\b", "\\r", "\r", "\\f", "\f", "\\a", "\a", "\\\"", "\"")
 
 func (n *Node) MarshalText() ([]byte, error) {
 	if n == nil {
