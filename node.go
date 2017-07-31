@@ -105,6 +105,14 @@ func (n *Node) ClearFormatting() {
 	}
 }
 
+func (n *Node) GetCustomFormatPrefix() string {
+	return n.cf.before
+}
+
+func (n *Node) SetCustomFormatPrefix(str string) {
+	n.cf.before = str
+}
+
 type customFormat struct {
 	before        string
 	condition     string
