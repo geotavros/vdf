@@ -28,6 +28,16 @@ func (n *Node) FirstByName(name string) *Node {
 	}
 	return nil
 }
+
+func (n *Node) FirstByNameAndCondition(name string, condition string) *Node {
+	for c := n.FirstChild(); c != nil; c = c.NextChild() {
+		if strings.EqualFold(c.Name(), name) && (condition == "" || strings.EqualFold(c.Condition(), condition)) {
+			return c
+		}
+	}
+	return nil
+}
+
 func (n *Node) NextByName(name string) *Node {
 	for c := n.NextChild(); c != nil; c = c.NextChild() {
 		if strings.EqualFold(c.Name(), name) {
